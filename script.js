@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const elementoRelogio = document.getElementById('relogio');
 
         if (elementoRelogio) {
-            elementoRelogio.innerText = ` | 📅 ${data} - ${horario}`;
+            elementoRelogio.innerText = `📅 ${data} - ⏰ ${horario}`;
         }
     }
     setInterval(atualizarRelogio, 1000);

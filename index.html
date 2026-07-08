@@ -56,36 +56,38 @@
         class="link-btn">
         🚨 Relatório Diário de Ocorrência
       </a>
+
+      <button class="link-btn featured" id="btn-medicao" style="cursor: pointer; width: 100%;">
+        ⏱️ Medição
+      </button>
     </div>
 
-  </div> <!-- Fechamento da div container adicionado -->
+  <div class="modal-overlay" id="modalMedicao">
+    <div class="modal-content">
+      <span class="close-btn" id="closeMedicao">&times;</span>
+      <h2 style="margin-bottom: 15px; color: #E31B23;">Controle de Medição</h2>
+      
+      <div class="medicao-controls" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+        <label for="select-terminal" style="font-weight: bold;">Terminal:</label>
+        <select id="select-terminal" class="custom-select" style="padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;">
+          <option value="T2">Terminal 2</option>
+          <option value="T3">Terminal 3</option>
+        </select>
 
-  <!-- <div class="social-icons">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-        </div>
+        <label for="select-local" style="font-weight: bold;">Local:</label>
+        <select id="select-local" class="custom-select" style="padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;">
+          <!-- Opções preenchidas dinamicamente -->
+        </select>
+      </div>
 
-        <div class="footer-logo">
-            <p>© 2026 WFS Orbital. All rights reserved.</p>
-        </div>
+      <div class="medicao-status-container" style="text-align: center; margin-top: 20px; padding: 20px; border-radius: 10px; background-color: #f5f5f5;">
+        <p id="medicao-time" style="font-size: 32px; font-weight: bold; margin-bottom: 5px;">--:--</p>
+        <p id="medicao-message" style="font-size: 18px; font-weight: 500;">Carregando...</p>
+      </div>
     </div>
+  </div>
 
-    <div class="modal-overlay" id="modalRequisitos">
-        <div class="modal-content">
-            <span class="close-btn" id="closeModal">&times;</span>
-            <h2>Requisitos: Supervisor II</h2>
-            <ul>
-                <li><strong>Gestão:</strong> Experiência com gestão de equipes.</li>
-                <li><strong>Idiomas:</strong> Inglês e Espanhol.</li>
-                <li><strong>Tech:</strong> Pacote Office, Data Studio / Power BI.</li>
-                <li><strong>Segurança:</strong> Conhecimento em Safety e Security.</li>
-            </ul>
-            <p><strong>Horário:</strong> Escala operacional.</p>
-            <br>
-            <button class="link-btn featured" id="btn-aplicar">Aplicar Agora</button>
-        </div>
-    </div> -->
+  </div>
 
   <script src="script.js"></script>
 </body>

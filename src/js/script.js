@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     function atualizarRelogio() {
         const agora = new Date();
         const data = agora.toLocaleDateString('pt-BR');
         const horario = agora.toLocaleTimeString('pt-BR');
-        
+
         const elementoRelogio = document.getElementById('relogio');
 
         if (elementoRelogio) {
@@ -39,15 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateMedicaoStatus() {
         const terminal = document.getElementById('select-terminal').value;
         const local = document.getElementById('select-local').value;
-        
+
         if (!terminal || !local) return;
 
         const horarios = horariosMedicao[terminal][local];
         const agora = new Date();
-        
+
         let previousTime = null;
         let nextTime = null;
-        
+
         for (let i = 0; i < horarios.length; i++) {
             let scheduleDate = parseTimeToDate(horarios[i]);
             if (scheduleDate <= agora) {
@@ -58,12 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             }
         }
-        
+
         if (!nextTime) {
             nextTime = parseTimeToDate(horarios[0]);
             nextTime.setDate(nextTime.getDate() + 1);
         }
-        
+
         let isEmMedicao = false;
         if (previousTime) {
             const diffPastMinutes = Math.floor((agora - previousTime) / (1000 * 60));
@@ -73,11 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const diffFutureMinutes = Math.floor((nextTime - agora) / (1000 * 60));
-        
+
         const timeElem = document.getElementById('medicao-time');
         const msgElem = document.getElementById('medicao-message');
         const container = document.querySelector('.medicao-status-container');
-        
+
         if (isEmMedicao) {
             timeElem.innerText = `Em andamento`;
             timeElem.style.color = '#28a745';
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const terminal = document.getElementById('select-terminal').value;
         const localSelect = document.getElementById('select-local');
         localSelect.innerHTML = '';
-        
+
         const locais = Object.keys(horariosMedicao[terminal]);
         locais.forEach(loc => {
             const opt = document.createElement('option');
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             opt.innerText = loc;
             localSelect.appendChild(opt);
         });
-        
+
         updateMedicaoStatus();
     }
 

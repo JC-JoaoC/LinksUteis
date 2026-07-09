@@ -1,12 +1,12 @@
-const CACHE_NAME = 'links-wfs-v4';
+const CACHE_NAME = 'links-wfs-v5';
 const ASSETS = [
     './',
     './index.html',
-    './style.css',
-    './script.js',
+    './src/css/style.css',
+    './src/js/script.js',
     './manifest.json',
-    './icon-192.png',
-    './icon-512.png'
+    './src/assets/icon-192.png',
+    './src/assets/icon-512.png'
 ];
 
 self.addEventListener('install', (event) => {

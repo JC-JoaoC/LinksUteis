@@ -1,4 +1,4 @@
-const CACHE_NAME = 'links-wfs-v5';
+const CACHE_NAME = 'links-wfs-v6';
 const ASSETS = [
     './',
     './index.html',
